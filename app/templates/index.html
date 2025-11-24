@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ko'z Kasalliklarini Aniqlash</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ko'z Kasalliklarini Aniqlash Tizimi</h1>
+            <p class="subtitle">Sun'iy intellekt yordamida ko'z kasalliklarini aniqlash</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-box" id="uploadBox">
+                    <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    <h3>Ko'z rasmini yuklang</h3>
+                    <p>PNG, JPG yoki JPEG formatida</p>
+                    <input type="file" id="imageInput" accept="image/png, image/jpeg, image/jpg" multiple>
+                    <button class="btn-upload" onclick="document.getElementById('imageInput').click()">
+                        Rasm tanlash
+                    </button>
+                </div>
+
+                <div class="preview-section" id="previewSection" style="display: none;">
+                    <h3>Yuklangan rasm:</h3>
+                    <div id="imagePreview"></div>
+                    <button class="btn-primary" id="predictBtn">Tekshirish</button>
+                    <button class="btn-secondary" id="clearBtn">Tozalash</button>
+                </div>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Tahlil qilinmoqda...</p>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2>Natijalar</h2>
+                <div id="resultsContainer"></div>
+            </div>
+
+            <div class="info-section">
+                <h3>Aniqlanadigan kasalliklar:</h3>
+                <div class="diseases-grid">
+                    <div class="disease-card">
+                        <h4>Katarakta</h4>
+                        <p>Ko'z linzasining xiralashishi</p>
+                    </div>
+                    <div class="disease-card">
+                        <h4>Glaukoma</h4>
+                        <p>Ko'z ichki bosimining oshishi</p>
+                    </div>
+                    <div class="disease-card">
+                        <h4>Diabetik Retinopatiya</h4>
+                        <p>Diabet tufayli ko'z shikastlanishi</p>
+                    </div>
+                    <div class="disease-card">
+                        <h4>Normal</h4>
+                        <p>Sog'lom ko'z holati</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Diqqat: Bu tizim faqat ko'makchi diagnostika vositasi hisoblanadi. Aniq tashxis uchun shifokorga murojaat qiling.</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
